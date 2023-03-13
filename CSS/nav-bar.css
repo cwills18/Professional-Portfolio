@@ -29,6 +29,11 @@
     justify-content: center;
   }
 }
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .nav-bar {
+    justify-content: center;
+  }
+}
 .nav-bar__list-container {
   flex-direction: row;
   width: 40%;
@@ -39,6 +44,13 @@
 @media only screen and (max-width: 480px) {
   .nav-bar__list-container {
     width: fit-content;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .nav-bar__list-container {
+    width: 100%;
     justify-content: space-around;
     flex-flow: row wrap;
   }
@@ -54,6 +66,12 @@
   .list-container__list-item {
     padding: 10px 10px;
     font-size: 12px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .list-container__list-item {
+    padding: 10px 10px;
+    font-size: 16px;
   }
 }
 .list-container__list-item:hover {
