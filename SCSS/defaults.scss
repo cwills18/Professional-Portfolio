@@ -1,0 +1,41 @@
+@import "./themes";
+
+%default-display {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	width: fit-content;
+}
+
+%default-section-heading {
+	font-family: $secondary;
+	font-size: 48px;
+	letter-spacing: 0.05em;
+	margin-bottom: 20px;
+}
+
+%default-section-subheading {
+	font-family: $primary;
+	color: $kilamanjaro;
+	font-size: 28px;
+	letter-spacing: 0.05em;
+	width: 90%;
+	text-align: left;
+}
+
+%default-section-para {
+	font-family: $primary;
+	color: $kilamanjaro;
+	font-size: 22px;
+	width: 90%;
+	text-align: left;
+	padding: 20px;
+}
+
+%skill-icon {
+	font-size: 100px;
+	color: $thatch;
+}

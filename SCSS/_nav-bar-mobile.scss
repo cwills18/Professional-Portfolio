@@ -1,0 +1,14 @@
+@mixin container {
+	justify-content: center;
+}
+
+@mixin list-container {
+	width: fit-content;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+
+@mixin list-item {
+	padding: 10px 10px;
+	font-size: 12px;
+}
