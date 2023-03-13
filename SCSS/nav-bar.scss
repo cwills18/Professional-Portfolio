@@ -1,6 +1,7 @@
 @use "defaults.scss";
 @use "screens.scss";
 @use "nav-bar-mobile";
+@use "nav-bar-tablet";
 @import "themes.scss";
 
 .nav-bar {
@@ -18,6 +19,9 @@
 	@include screens.mobile {
 		@include nav-bar-mobile.container;
 	}
+	@include screens.tablet {
+		@include nav-bar-tablet.container;
+	}
 	&__list-container {
 		@extend %default-display;
 		flex-direction: row;
@@ -27,6 +31,9 @@
 		color: $alto;
 		@include screens.mobile {
 			@include nav-bar-mobile.list-container;
+		}
+		@include screens.tablet {
+			@include nav-bar-tablet.list-container;
 		}
 	}
 }
@@ -39,6 +46,9 @@
 		padding: 10px 20px;
 		@include screens.mobile {
 			@include nav-bar-mobile.list-item;
+		}
+		@include screens.tablet {
+			@include nav-bar-tablet.list-item;
 		}
 		&:hover {
 			color: $thatch;
