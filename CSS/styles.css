@@ -1,6 +1,6 @@
 /* Color Swatches in RGBA */
 /*Font Styles*/
-main, .header-container, .header-container__title, .header-container__sub-title, .header-container__page-down, .container, .container--skills__icon-grid, .container--skills__icon-grid figure, .container--projects__project-grid figure, .container--projects__project-grid figure figcaption, .nav-bar, .nav-bar__list-container, .list-container__list-item {
+main, .main__container, .main__container__page-down, .header__title, .header__sub-title, .skills__icon-grid, .skills__icon-grid figure, .projects__project-grid__item, .projects__project-grid__item__details, .about, .contact, .contact__contact-links, .contact__contact-links__item, .nav-bar, .nav-bar__list-container, .list-container__list-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,14 +10,14 @@ main, .header-container, .header-container__title, .header-container__sub-title,
   width: fit-content;
 }
 
-.container__heading {
+.main__container__heading {
   font-family: "DM Serif Display", serif;
   font-size: 48px;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
 
-.container__sub-heading {
+.main__container__sub-heading {
   font-family: "DM Sans", sans-serif;
   color: rgb(63, 62, 61);
   font-size: 28px;
@@ -26,7 +26,7 @@ main, .header-container, .header-container__title, .header-container__sub-title,
   text-align: left;
 }
 
-.container__para {
+.main__container__para {
   font-family: "DM Sans", sans-serif;
   color: rgb(63, 62, 61);
   font-size: 22px;
@@ -35,9 +35,22 @@ main, .header-container, .header-container__title, .header-container__sub-title,
   padding: 20px;
 }
 
-.container--skills__icon-grid__icons {
+.skills__icon-grid__icons {
   font-size: 100px;
-  color: rgb(165, 136, 134);
+  color: rgb(165, 117, 117);
+}
+
+.projects__button, .projects__button--see-more {
+  font-family: "DM Serif Display", serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 2px 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+}
+.projects__button:hover, .projects__button--see-more:hover {
+  cursor: pointer;
 }
 
 /* Color Swatches in RGBA */
@@ -105,11 +118,11 @@ main, .header-container, .header-container__title, .header-container__sub-title,
   }
 }
 .list-container__list-item:hover {
-  color: rgb(165, 136, 134);
+  color: rgb(165, 117, 117);
   cursor: pointer;
 }
 .list-container__list-item:active {
-  color: rgb(165, 136, 134);
+  color: rgb(165, 117, 117);
   cursor: pointer;
 }
 
@@ -127,26 +140,68 @@ main, .header-container, .header-container__title, .header-container__sub-title,
 
 main {
   background-color: rgb(216, 215, 214);
-  padding-top: 0px;
 }
 
-.header-container {
+.main__container {
+  border-top: 10px solid rgb(63, 62, 61);
+  padding: 50px 0px;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-start;
+}
+.main__container__page-down {
+  position: absolute;
+  bottom: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 80px;
+  color: rgb(114, 112, 111);
+  line-height: 20px;
+}
+.main__container__page-down__icons {
+  rotate: 90deg;
+}
+.main__container__page-down:hover {
+  color: rgb(165, 117, 117);
+  cursor: pointer;
+}
+.main__container--skills {
+  background-color: rgb(216, 215, 214);
+  color: rgb(63, 62, 61);
+}
+.main__container--projects {
+  background-color: rgb(165, 117, 117);
+  color: rgb(216, 215, 214);
+}
+.main__container--about {
+  background-color: rgb(216, 215, 214);
+  color: rgb(63, 62, 61);
+  height: auto;
+}
+.main__container--contact {
+  background-color: rgb(63, 62, 61);
+  color: rgb(216, 194, 192);
+  height: auto;
+  padding: 30px 0px 40px;
+}
+
+.header {
   color: rgb(63, 62, 61);
   background-color: rgb(216, 194, 192);
   width: 100%;
-  height: 100vh;
+  justify-content: center;
+  padding: 0px;
 }
-.header-container__title {
+.header__title {
   font-family: "Sail", cursive;
   font-size: 120px;
 }
 @media only screen and (max-width: 480px) {
-  .header-container__title {
+  .header__title {
     font-size: 100px;
   }
 }
-.header-container__title--animated {
-  background-image: linear-gradient(-225deg, rgb(63, 62, 61) 0%, rgb(63, 62, 61) 10%, rgb(114, 112, 111) 20%, rgb(165, 136, 134) 25%, rgb(191, 117, 111) 50%, rgb(165, 136, 134) 75%, rgb(114, 112, 111) 80%, rgb(63, 62, 61) 90%, rgb(63, 62, 61) 100%);
+.header__title--animated {
+  background-image: linear-gradient(-225deg, rgb(63, 62, 61) 0%, rgb(63, 62, 61) 10%, rgb(114, 112, 111) 20%, rgb(165, 117, 117) 25%, rgb(191, 117, 111) 50%, rgb(165, 117, 117) 75%, rgb(114, 112, 111) 80%, rgb(63, 62, 61) 90%, rgb(63, 62, 61) 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -157,54 +212,28 @@ main {
   animation: textclip 10s linear infinite;
   display: inline-block;
 }
-.header-container__sub-title {
+.header__sub-title {
   font-family: "DM Sans", sans-serif;
   font-size: 28px;
   letter-spacing: 0.2em;
 }
 @media only screen and (max-width: 480px) {
-  .header-container__sub-title {
+  .header__sub-title {
     font-size: 18px;
   }
 }
-.header-container__page-down {
-  position: absolute;
-  bottom: 20px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 80px;
-  color: rgb(114, 112, 111);
-  line-height: 20px;
-}
-.header-container__page-down__icons {
-  rotate: 90deg;
-}
-.header-container__page-down:hover {
-  color: rgb(165, 136, 134);
-  cursor: pointer;
-}
 
-.container {
-  border-top: 10px solid rgb(63, 62, 61);
-  padding: 50px 0px;
-  width: 100%;
-  justify-content: flex-start;
-}
-.container--skills {
-  background-color: rgb(216, 215, 214);
-  color: rgb(63, 62, 61);
-  width: 100%;
-}
-.container--skills__icon-grid {
-  width: 100%;
+.skills__icon-grid {
+  width: 90%;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.container--skills__icon-grid figure {
+.skills__icon-grid figure {
   width: 136px;
   flex-direction: column;
   margin: 10px;
 }
-.container--skills__icon-grid figure figcaption {
+.skills__icon-grid figure figcaption {
   color: rgb(63, 62, 61);
   font-family: "DM Sans", sans-serif;
   font-size: 1.2em;
@@ -212,115 +241,122 @@ main {
   font-weight: 700;
   padding: 10px;
 }
-.container--projects {
-  background-color: rgb(165, 136, 134);
-  color: rgb(216, 215, 214);
+.projects__button {
+  width: fit-content;
+  background-color: rgb(63, 62, 61);
+  color: rgb(216, 194, 192);
+  font-size: 14px;
 }
-.container--projects button {
+.projects__button:hover {
+  background-color: rgb(114, 112, 111);
+}
+@media only screen and (max-width: 480px) {
+  .projects__button {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .projects__button {
+    font-size: 12px;
+  }
+}
+.projects__button--see-more {
   width: 30%;
   background-color: rgb(216, 215, 214);
   color: rgb(63, 62, 61);
-  font-family: "DM Serif Display", serif;
-  font-weight: 500;
   font-size: 24px;
-  letter-spacing: 0.05em;
-  margin: 2px 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 20px;
 }
-.container--projects button:hover {
-  cursor: pointer;
+.projects__button--see-more:hover {
   background-color: rgb(216, 194, 192);
 }
 @media only screen and (max-width: 480px) {
-  .container--projects button {
+  .projects__button--see-more {
     font-size: 20px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects button {
+  .projects__button--see-more {
     font-size: 20px;
   }
 }
-.container--projects__project-grid {
+.projects__project-grid {
   display: grid;
   width: 90%;
   margin: 30px 0px;
 }
 @media only screen and (max-width: 480px) {
-  .container--projects__project-grid {
+  .projects__project-grid {
     grid-template-columns: 100%;
     grid-gap: 20px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects__project-grid {
+  .projects__project-grid {
     grid-template-columns: 100%;
     grid-gap: 20px;
   }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
-  .container--projects__project-grid {
+  .projects__project-grid {
     grid-template-columns: 100%;
     grid-gap: 20px;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .container--projects__project-grid {
+  .projects__project-grid {
     grid-template-columns: 50% 50%;
     grid-gap: 20px;
     margin: 40px 0px;
   }
 }
 @media only screen and (min-width: 1201px) {
-  .container--projects__project-grid {
+  .projects__project-grid {
     grid-template-columns: 50% 50%;
     grid-gap: 20px;
   }
 }
-.container--projects__project-grid figure {
+.projects__project-grid__item {
   flex-direction: row;
   background-color: rgb(216, 215, 214);
+  color: rgb(63, 62, 61);
   border-radius: 10px;
 }
-.container--projects__project-grid figure img {
+.projects__project-grid__item img {
   width: 50%;
   align-self: flex-start;
   margin: 10px;
 }
 @media only screen and (max-width: 480px) {
-  .container--projects__project-grid figure img {
+  .projects__project-grid__item img {
     width: 40%;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects__project-grid figure img {
+  .projects__project-grid__item img {
     width: 40%;
   }
 }
-.container--projects__project-grid figure figcaption {
+.projects__project-grid__item__details {
   height: 100%;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.container--projects__project-grid figure figcaption h3 {
+.projects__project-grid__item__details__project-name {
   width: fit-content;
   font-family: "DM Serif Display", serif;
-  color: rgb(63, 62, 61);
   font-size: 28px;
 }
 @media only screen and (max-width: 480px) {
-  .container--projects__project-grid figure figcaption h3 {
+  .projects__project-grid__item__details__project-name {
     font-size: 20px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects__project-grid figure figcaption h3 {
+  .projects__project-grid__item__details__project-name {
     font-size: 20px;
   }
 }
-.container--projects__project-grid figure figcaption p {
+.projects__project-grid__item__details__project-description {
   width: 90%;
   color: rgb(63, 62, 61);
   font-size: 14px;
@@ -328,36 +364,57 @@ main {
   margin: 5px 0px;
 }
 @media only screen and (max-width: 480px) {
-  .container--projects__project-grid figure figcaption p {
+  .projects__project-grid__item__details__project-description {
     font-size: 12px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects__project-grid figure figcaption p {
+  .projects__project-grid__item__details__project-description {
     font-size: 12px;
   }
 }
-.container--projects__project-grid figure figcaption div {
+.projects__project-grid__item__details__button-container {
   width: 90%;
   padding: 0px;
   margin: 0px;
 }
-.container--projects__project-grid figure figcaption div button {
-  width: fit-content;
-  background-color: rgb(63, 62, 61);
-  color: rgb(216, 194, 192);
-  font-size: 14px;
+
+.about__photo {
+  width: 200px;
+  border: 5px solid rgb(63, 62, 61);
+  border-radius: 50%;
+  filter: invert(0%) sepia(80%) saturate(30%) hue-rotate(297deg) brightness(82%) contrast(100%);
 }
-.container--projects__project-grid figure figcaption div button:hover {
-  background-color: rgb(114, 112, 111);
+
+.contact__contact-links {
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+  padding: 0px;
 }
-@media only screen and (max-width: 480px) {
-  .container--projects__project-grid figure figcaption div button {
-    font-size: 12px;
-  }
+.contact__contact-links__item {
+  flex-direction: row;
+  margin: 0% 3%;
 }
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .container--projects__project-grid figure figcaption div button {
-    font-size: 12px;
-  }
+.contact__contact-links__item:hover {
+  cursor: pointer;
+}
+.contact__contact-links__item__icon {
+  width: 50px;
+  margin: 0px 10px;
+  filter: invert(96%) sepia(11%) saturate(940%) hue-rotate(297deg) brightness(92%) contrast(82%);
+}
+.contact__contact-links__item__text {
+  margin: 0px 10px;
+  font-size: 24px;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.contact__contact-links__item:hover .contact__contact-links__item__text {
+  color: rgb(165, 117, 117);
+}
+
+.contact__contact-links__item:hover .contact__contact-links__item__icon {
+  filter: invert(68%) sepia(5%) saturate(1259%) hue-rotate(315deg) brightness(83%) contrast(84%);
 }

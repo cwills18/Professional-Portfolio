@@ -75,10 +75,10 @@
   }
 }
 .list-container__list-item:hover {
-  color: rgb(165, 136, 134);
+  color: rgb(165, 117, 117);
   cursor: pointer;
 }
 .list-container__list-item:active {
-  color: rgb(165, 136, 134);
+  color: rgb(165, 117, 117);
   cursor: pointer;
 }
