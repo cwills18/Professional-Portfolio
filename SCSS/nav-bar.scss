@@ -1,7 +1,7 @@
 @use "defaults.scss";
 @use "screens.scss";
-@use "nav-bar-mobile";
-@use "nav-bar-tablet";
+@use "nav-bar-tablet.scss";
+@use "nav-bar-large-screen.scss";
 @import "themes.scss";
 
 .nav-bar {
@@ -10,30 +10,21 @@
 	flex-direction: row;
 	position: fixed;
 	width: 100%;
+	background-color: $kilamanjaro;
 	font-family: $primary;
 	font-weight: 500;
 	letter-spacing: 0.1em;
-	justify-content: flex-end;
-	background-color: $kilamanjaro;
-	padding: 0;
-	@include screens.mobile {
-		@include nav-bar-mobile.container;
-	}
-	@include screens.tablet {
-		@include nav-bar-tablet.container;
+	padding: 0%;
+	@media only screen and (min-width: 767px) {
+		@include nav-bar-large-screen.container;
 	}
 	&__list-container {
 		@extend %default-display;
-		flex-direction: row;
-		width: 40%;
-		justify-content: flex-end;
-		padding: 0;
-		color: $alto;
-		@include screens.mobile {
-			@include nav-bar-mobile.list-container;
-		}
-		@include screens.tablet {
-			@include nav-bar-tablet.list-container;
+		flex-flow: row wrap;
+		width: 100%;
+		justify-content: space-around;
+		@media only screen and (min-width: 767px) {
+			@include nav-bar-large-screen.list-container;
 		}
 	}
 }
@@ -42,13 +33,15 @@
 		@extend %default-display;
 		width: fit-content;
 		flex-wrap: wrap;
-		list-style-type: none;
 		padding: 10px 20px;
-		@include screens.mobile {
-			@include nav-bar-mobile.list-item;
-		}
+		list-style-type: none;
+		color: $alto;
+		font-size: 0.8em;
 		@include screens.tablet {
 			@include nav-bar-tablet.list-item;
+		}
+		@media only screen and (min-width: 767px) {
+			@include nav-bar-large-screen.list-item;
 		}
 		&:hover {
 			color: $thatch;

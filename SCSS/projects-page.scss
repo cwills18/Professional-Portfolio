@@ -1,0 +1,205 @@
+@use "defaults.scss";
+@use "nav-bar.scss";
+@use "screens.scss";
+@use "footer-contact.scss";
+@import "themes.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	all: unset;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+main {
+	@extend %default-display;
+	background-color: $thatch;
+	padding: 50px 0px;
+	width: 100%;
+	max-width: 100%;
+	justify-content: flex-start;
+	background-color: $thatch;
+	color: $porcelain;
+}
+
+.main__container {
+	@extend %default-display;
+	&__heading {
+		@extend %default-section-heading;
+		margin-top: 30px;
+	}
+	&__sub-heading {
+		@extend %default-section-subheading;
+		width: 100%;
+		background-color: $alto;
+		padding-left: 10%;
+		font-size: 2em;
+		margin-top: 20px;
+	}
+	&__para {
+		@extend %default-section-para;
+		color: $porcelain;
+		padding-bottom: 0px;
+	}
+	&--contact {
+		background-color: $kilamanjaro;
+		color: $alto;
+		height: auto;
+		padding: 20px 0px 40px;
+	}
+}
+
+.projects {
+	&__button {
+		@extend %default-button-style;
+		width: fit-content;
+		background-color: $kilamanjaro;
+		color: $alto;
+		font-size: 14px;
+		&:hover {
+			background-color: $sandstone;
+		}
+		@include screens.mobile {
+			font-size: 12px;
+		}
+		@include screens.tablet {
+			font-size: 12px;
+		}
+		&--see-more {
+			@extend %default-button-style;
+			width: 30%;
+			background-color: $porcelain;
+			color: $kilamanjaro;
+			font-size: 24px;
+			&:hover {
+				background-color: $alto;
+			}
+			@include screens.mobile {
+				font-size: 20px;
+			}
+			@include screens.tablet {
+				font-size: 20px;
+			}
+		}
+	}
+	&__project-grid {
+		display: grid;
+		width: 90%;
+		margin: 30px 0px 20px;
+		@include screens.mobile {
+			grid-template-columns: 100%;
+			grid-row-gap: 20px;
+		}
+		@include screens.tablet {
+			grid-template-columns: 100%;
+			grid-row-gap: 20px;
+		}
+		@include screens.tablet-laptop {
+			grid-template-columns: 100%;
+			grid-row-gap: 20px;
+		}
+		@include screens.computer-large {
+			grid-template-columns: 49% 49%;
+			grid-gap: 20px 2%;
+			margin: 40px 0px 20px;
+		}
+		@include screens.extra-large {
+			grid-template-columns: 49% 49%;
+			grid-gap: 20px 2%;
+			margin: 40px 0px;
+		}
+		&__item {
+			@extend %default-display;
+			flex-direction: row;
+			background-color: $porcelain;
+			color: $kilamanjaro;
+			border-radius: 5px;
+			overflow: auto;
+			& img {
+				width: 40%;
+				align-self: flex-start;
+				margin: 2%;
+				@media only screen and (min-width: 1025px) {
+					width: 50%;
+					margin: 4%;
+				}
+			}
+			&--hidden {
+				display: none;
+			}
+			&__details {
+				@extend %default-display;
+				flex-direction: column;
+				justify-content: space-evenly;
+				padding: 2% 2% 2% 0%;
+				@media only screen and (min-width: 1025px) {
+					padding: 4% 4% 4% 0%;
+				}
+				&__project-name {
+					width: fit-content;
+					font-family: $secondary;
+					font-size: 1.3em;
+					@media only screen and (min-width: 767px) {
+						font-size: 1.75em;
+					}
+				}
+				&__project-description {
+					color: $kilamanjaro;
+					font-size: 0.9em;
+					text-align: justify;
+					margin: 4% 0%;
+					@media only screen and (min-width: 767px) {
+						font-size: 1.1em;
+					}
+				}
+				&__button-container {
+					width: 90%;
+					padding: 0px;
+					margin: 0px;
+				}
+			}
+		}
+	}
+	&__expand,
+	&__collapse {
+		@extend %default-display;
+		flex-direction: row;
+		justify-content: flex-start;
+		width: 90%;
+		height: 2.5em;
+		margin-bottom: 40px;
+		padding: 5px 0px;
+		background-color: rgba(216, 215, 214, 0.8);
+		color: $kilamanjaro;
+		border-left: 6px solid $sandstone;
+		border-radius: 5px;
+		&__icon {
+			@extend %default-display;
+			width: 5%;
+			font-size: 2em;
+		}
+		&__text {
+			@extend %default-display;
+			@extend %default-section-subheading;
+			flex-direction: row;
+			justify-content: flex-start;
+			font-size: 1.5em;
+		}
+		&:hover {
+			cursor: pointer;
+			border-left: 6px solid $kilamanjaro;
+			font-weight: bold;
+		}
+	}
+	&__collapse {
+		display: none;
+	}
+}
