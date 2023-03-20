@@ -1,7 +1,5 @@
 @use "defaults.scss";
 @use "screens.scss";
-@use "nav-bar-tablet.scss";
-@use "nav-bar-large-screen.scss";
 @import "themes.scss";
 
 .nav-bar {
@@ -16,7 +14,7 @@
 	letter-spacing: 0.1em;
 	padding: 0%;
 	@media only screen and (min-width: 767px) {
-		@include nav-bar-large-screen.container;
+		justify-content: flex-end;
 	}
 	&__list-container {
 		@extend %default-display;
@@ -24,7 +22,8 @@
 		width: 100%;
 		justify-content: space-around;
 		@media only screen and (min-width: 767px) {
-			@include nav-bar-large-screen.list-container;
+			width: fit-content;
+			padding: 0;
 		}
 	}
 }
@@ -38,17 +37,17 @@
 		color: $alto;
 		font-size: 0.8em;
 		@include screens.tablet {
-			@include nav-bar-tablet.list-item;
+			font-size: 1em;
 		}
 		@media only screen and (min-width: 767px) {
-			@include nav-bar-large-screen.list-item;
+			font-size: 1em;
 		}
 		&:hover {
-			color: $thatch;
+			color: $burnished-brown;
 			cursor: pointer;
 		}
 		&:active {
-			color: $thatch;
+			color: $burnished-brown;
 			cursor: pointer;
 		}
 	}

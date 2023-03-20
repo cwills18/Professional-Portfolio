@@ -1,6 +1,9 @@
 /* Color Swatches in RGBA */
 /*Font Styles*/
-main, .main__container, .projects__project-grid__item, .projects__project-grid__item__details, .projects__expand, .projects__collapse, .projects__expand__icon, .projects__collapse__icon, .projects__expand__text, .projects__collapse__text, .contact, .contact__contact-links, .contact__contact-links__item, .contact__contact-links__item__text, .nav-bar, .nav-bar__list-container, .list-container__list-item {
+main, .container, .project-card, .project-card__details, .expand,
+.collapse, .expand__icon,
+.collapse__icon, .expand__text,
+.collapse__text, .contact, .contact__contact-links-container, .contact-links__item, .contact-links__text, .nav-bar, .nav-bar__list-container, .list-container__list-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,14 +13,15 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
   width: 100%;
 }
 
-.main__container__heading {
+.container__heading {
   font-family: "DM Serif Display", serif;
   font-size: 3em;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
 }
 
-.main__container__sub-heading, .projects__expand__text, .projects__collapse__text {
+.container__sub-heading, .expand__text,
+.collapse__text {
   font-family: "DM Sans", sans-serif;
   color: rgb(63, 62, 61);
   font-size: 1.75em;
@@ -26,7 +30,7 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
   text-align: left;
 }
 
-.main__container__para {
+.container__para {
   font-family: "DM Sans", sans-serif;
   color: rgb(63, 62, 61);
   font-size: 1.4em;
@@ -35,7 +39,7 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
   padding: 20px;
 }
 
-.projects__button, .projects__button--see-more {
+.button--projects {
   font-family: "DM Serif Display", serif;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -44,7 +48,7 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
   border: none;
   border-radius: 20px;
 }
-.projects__button:hover, .projects__button--see-more:hover {
+.button--projects:hover {
   cursor: pointer;
 }
 
@@ -107,43 +111,54 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
 
 /* Color Swatches in RGBA */
 /*Font Styles*/
-.contact__contact-links {
+.contact__contact-links-container {
   flex-direction: column;
   justify-content: center;
   width: 100%;
   padding: 0px;
 }
 @media only screen and (min-width: 540px) {
-  .contact__contact-links {
+  .contact__contact-links-container {
     flex-direction: row;
   }
 }
-.contact__contact-links__item {
+
+.contact-links:hover {
+  cursor: pointer;
+}
+.contact-links:hover p {
+  color: rgb(165, 117, 117);
+}
+.contact-links:hover img {
+  filter: invert(68%) sepia(5%) saturate(1259%) hue-rotate(315deg) brightness(83%) contrast(84%);
+}
+.contact-links__item {
   width: fit-content;
   margin: 15px 0px;
+  font-size: 1em;
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .contact__contact-links__item {
+  .contact-links__item {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
-  .contact__contact-links__item {
+  .contact-links__item {
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0px 5px;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .contact__contact-links__item {
+  .contact-links__item {
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0px 20px;
   }
 }
 @media only screen and (min-width: 1201px) {
-  .contact__contact-links__item {
+  .contact-links__item {
     flex-direction: row;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -151,50 +166,89 @@ main, .main__container, .projects__project-grid__item, .projects__project-grid__
   }
 }
 @media only screen and (min-width: 1100px) {
-  .contact__contact-links__item {
+  .contact-links__item {
     margin: 0px 40px;
   }
 }
-.contact__contact-links__item:hover {
-  cursor: pointer;
+@media only screen and (min-width: 540px) {
+  .contact-links__item--email {
+    position: relative;
+    left: 6%;
+  }
 }
-.contact__contact-links__item__icon {
+@media only screen and (min-width: 540px) {
+  .contact-links__item--linkedin {
+    position: relative;
+    left: 6%;
+  }
+}
+.contact-links__icon {
   width: 50px;
   margin: 0px 10px;
   filter: invert(96%) sepia(11%) saturate(940%) hue-rotate(297deg) brightness(92%) contrast(82%);
 }
-.contact__contact-links__item__text {
+.contact-links__text {
   margin: 0px 10px;
   font-size: 1.25em;
   font-family: "DM Sans", sans-serif;
   letter-spacing: 0.05em;
 }
 @media only screen and (min-width: 850px) {
-  .contact__contact-links__item__text {
+  .contact-links__text {
     font-size: 1.5em;
   }
 }
-@media only screen and (min-width: 540px) {
-  .contact__contact-links__item--email {
-    position: relative;
-    left: 6%;
-  }
+
+/* Color Swatches in RGBA */
+/*Font Styles*/
+.modal-images {
+  display: none;
+  position: fixed;
+  z-index: 1021;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
 }
-@media only screen and (min-width: 540px) {
-  .contact__contact-links__item--linkedin {
-    position: relative;
-    left: 6%;
-  }
+.modal-images__content {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.modal-images__content__img {
+  width: 60%;
+  height: auto;
+  margin: 30px;
 }
 
-.contact__contact-links__item:hover .contact__contact-links__item__text {
+.close {
+  background-color: transparent;
+  border: none;
+  color: rgb(216, 215, 214);
+  float: right;
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-right: 1em;
+  z-index: 101;
+}
+
+.close:hover,
+.close:focus {
   color: rgb(165, 117, 117);
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.contact__contact-links__item:hover .contact__contact-links__item__icon {
-  filter: invert(68%) sepia(5%) saturate(1259%) hue-rotate(315deg) brightness(83%) contrast(84%);
-}
-
+/* #personal-projects__modal--project1 {
+	@extend %modal-images;
+} */
 /* Color Swatches in RGBA */
 /*Font Styles*/
 * {
@@ -222,160 +276,151 @@ main {
   color: rgb(216, 215, 214);
 }
 
-.main__container__heading {
+.container__heading {
+  font-family: "Sail", cursive;
+  font-size: 5em;
   margin-top: 30px;
 }
-.main__container__sub-heading {
+.container__heading--contact {
+  font-family: "DM Serif Display", serif;
+  font-size: 3em;
+}
+.container__sub-heading {
   width: 100%;
   background-color: rgb(216, 194, 192);
   padding-left: 10%;
   font-size: 2em;
   margin-top: 20px;
 }
-.main__container__para {
+.container__para {
   color: rgb(216, 215, 214);
   padding-bottom: 0px;
 }
-.main__container--contact {
+.container--contact {
   background-color: rgb(63, 62, 61);
   color: rgb(216, 194, 192);
   height: auto;
   padding: 20px 0px 40px;
 }
 
-.projects__button {
-  width: fit-content;
-  background-color: rgb(63, 62, 61);
-  color: rgb(216, 194, 192);
-  font-size: 14px;
-}
-.projects__button:hover {
-  background-color: rgb(114, 112, 111);
-}
-@media only screen and (max-width: 480px) {
-  .projects__button {
-    font-size: 12px;
-  }
-}
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .projects__button {
-    font-size: 12px;
-  }
-}
-.projects__button--see-more {
-  width: 30%;
-  background-color: rgb(216, 215, 214);
-  color: rgb(63, 62, 61);
-  font-size: 24px;
-}
-.projects__button--see-more:hover {
-  background-color: rgb(216, 194, 192);
-}
-@media only screen and (max-width: 480px) {
-  .projects__button--see-more {
-    font-size: 20px;
-  }
-}
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .projects__button--see-more {
-    font-size: 20px;
-  }
-}
-.projects__project-grid {
+.project-grid {
   display: grid;
   width: 90%;
   margin: 30px 0px 20px;
 }
 @media only screen and (max-width: 480px) {
-  .projects__project-grid {
+  .project-grid {
     grid-template-columns: 100%;
     grid-row-gap: 20px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .projects__project-grid {
+  .project-grid {
     grid-template-columns: 100%;
     grid-row-gap: 20px;
   }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
-  .projects__project-grid {
+  .project-grid {
     grid-template-columns: 100%;
     grid-row-gap: 20px;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .projects__project-grid {
+  .project-grid {
     grid-template-columns: 49% 49%;
     grid-gap: 20px 2%;
     margin: 40px 0px 20px;
   }
 }
 @media only screen and (min-width: 1201px) {
-  .projects__project-grid {
+  .project-grid {
     grid-template-columns: 49% 49%;
     grid-gap: 20px 2%;
     margin: 40px 0px;
   }
 }
-.projects__project-grid__item {
+
+.project-card {
   flex-direction: row;
   background-color: rgb(216, 215, 214);
   color: rgb(63, 62, 61);
   border-radius: 5px;
   overflow: auto;
 }
-.projects__project-grid__item img {
+.project-card__img {
   width: 40%;
   align-self: flex-start;
   margin: 2%;
 }
 @media only screen and (min-width: 1025px) {
-  .projects__project-grid__item img {
+  .project-card__img {
     width: 50%;
     margin: 4%;
   }
 }
-.projects__project-grid__item--hidden {
+.project-card--hidden {
   display: none;
 }
-.projects__project-grid__item__details {
+.project-card__details {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 2% 2% 2% 0%;
 }
 @media only screen and (min-width: 1025px) {
-  .projects__project-grid__item__details {
+  .project-card__details {
     padding: 4% 4% 4% 0%;
   }
 }
-.projects__project-grid__item__details__project-name {
+.project-card__details--name {
   width: fit-content;
   font-family: "DM Serif Display", serif;
   font-size: 1.3em;
 }
 @media only screen and (min-width: 767px) {
-  .projects__project-grid__item__details__project-name {
+  .project-card__details--name {
     font-size: 1.75em;
   }
 }
-.projects__project-grid__item__details__project-description {
+.project-card__details--description {
   color: rgb(63, 62, 61);
   font-size: 0.9em;
   text-align: justify;
   margin: 4% 0%;
 }
 @media only screen and (min-width: 767px) {
-  .projects__project-grid__item__details__project-description {
+  .project-card__details--description {
     font-size: 1.1em;
   }
 }
-.projects__project-grid__item__details__button-container {
+.project-card__details--button-container {
   width: 90%;
   padding: 0px;
   margin: 0px;
 }
-.projects__expand, .projects__collapse {
+
+.button--projects {
+  width: fit-content;
+  background-color: rgb(63, 62, 61);
+  color: rgb(216, 194, 192);
+  font-size: 14px;
+}
+.button--projects:hover {
+  background-color: rgb(114, 112, 111);
+}
+@media only screen and (max-width: 480px) {
+  .button--projects {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .button--projects {
+    font-size: 12px;
+  }
+}
+
+.expand,
+.collapse {
   flex-direction: row;
   justify-content: flex-start;
   width: 90%;
@@ -387,20 +432,25 @@ main {
   border-left: 6px solid rgb(114, 112, 111);
   border-radius: 5px;
 }
-.projects__expand__icon, .projects__collapse__icon {
+.expand__icon,
+.collapse__icon {
   width: 5%;
   font-size: 2em;
+  margin: 0% 1%;
 }
-.projects__expand__text, .projects__collapse__text {
+.expand__text,
+.collapse__text {
   flex-direction: row;
   justify-content: flex-start;
   font-size: 1.5em;
 }
-.projects__expand:hover, .projects__collapse:hover {
+.expand:hover,
+.collapse:hover {
   cursor: pointer;
   border-left: 6px solid rgb(63, 62, 61);
   font-weight: bold;
 }
-.projects__collapse {
+
+.collapse {
   display: none;
 }

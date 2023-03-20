@@ -4,7 +4,7 @@
 
 .contact {
 	@extend %default-display;
-	&__contact-links {
+	&__contact-links-container {
 		@extend %default-display;
 		flex-direction: column;
 		justify-content: center;
@@ -13,75 +13,75 @@
 		@media only screen and (min-width: 540px) {
 			flex-direction: row;
 		}
-		&__item {
-			@extend %default-display;
-			width: fit-content;
-			margin: 15px 0px;
-			@include screens.tablet {
-				flex-direction: row;
-				flex-wrap: wrap;
-			}
-			@include screens.tablet-laptop {
-				flex-direction: row;
-				flex-wrap: nowrap;
-				margin: 0px 5px;
-			}
-			@include screens.computer-large {
-				flex-direction: row;
-				flex-wrap: nowrap;
-				margin: 0px 20px;
-			}
-			@include screens.extra-large {
-				flex-direction: row;
-				flex-wrap: nowrap;
-				white-space: nowrap;
-				margin: 0px 20px;
-			}
-			@media only screen and (min-width: 1100px) {
-				margin: 0px 40px;
-			}
-			&:hover {
-				cursor: pointer;
-			}
-			&__icon {
-				width: 50px;
-				margin: 0px 10px;
-				filter: invert(96%) sepia(11%) saturate(940%)
-					hue-rotate(297deg) brightness(92%) contrast(82%);
-			}
-			&__text {
-				@extend %default-display;
-				margin: 0px 10px;
-				font-size: 1.25em;
-				font-family: $primary;
-				letter-spacing: 0.05em;
-				@media only screen and (min-width: 850px) {
-					font-size: 1.5em;
-				}
-			}
-			&--email {
-				@media only screen and (min-width: 540px) {
-					position: relative;
-					left: 6%;
-				}
-			}
-			&--linkedin {
-				@media only screen and (min-width: 540px) {
-					position: relative;
-					left: 6%;
-				}
-			}
-		}
 	}
 }
 
-.contact__contact-links__item:hover
-	.contact__contact-links__item__text {
-	color: $thatch;
-}
-
-.contact__contact-links__item:hover
-	.contact__contact-links__item__icon {
-	filter: invert(68%) sepia(5%) saturate(1259%) hue-rotate(315deg)
-		brightness(83%) contrast(84%);
+.contact-links {
+	&:hover {
+		cursor: pointer;
+		p {
+			color: $burnished-brown;
+		}
+		img {
+			filter: invert(68%) sepia(5%) saturate(1259%)
+				hue-rotate(315deg) brightness(83%) contrast(84%);
+		}
+	}
+	&__item {
+		@extend %default-display;
+		width: fit-content;
+		margin: 15px 0px;
+		font-size: 1em;
+		@include screens.tablet {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		@include screens.tablet-laptop {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			margin: 0px 5px;
+		}
+		@include screens.computer-large {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			margin: 0px 20px;
+		}
+		@include screens.extra-large {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			white-space: nowrap;
+			margin: 0px 20px;
+		}
+		@media only screen and (min-width: 1100px) {
+			margin: 0px 40px;
+		}
+		&--email {
+			@media only screen and (min-width: 540px) {
+				position: relative;
+				left: 6%;
+			}
+		}
+		&--linkedin {
+			@media only screen and (min-width: 540px) {
+				position: relative;
+				left: 6%;
+			}
+		}
+	}
+	&__icon {
+		width: 50px;
+		margin: 0px 10px;
+		filter: invert(96%) sepia(11%) saturate(940%)
+			hue-rotate(297deg) brightness(92%) contrast(82%);
+	}
+	&__text {
+		@extend %default-display;
+		margin: 0px 10px;
+		font-size: 1.25em;
+		font-family: $primary;
+		letter-spacing: 0.05em;
+		@media only screen and (min-width: 850px) {
+			font-size: 1.5em;
+		}
+	}
 }
