@@ -1,28 +1,26 @@
 function expandProjects() {
 	const projectsToAdd = document
 		.getElementById("softwareProjects")
-		.getElementsByClassName(
-			"projects__project-grid__item--hidden"
-		);
+		.getElementsByClassName("project-card--hidden");
 	for (let i = 0; i < projectsToAdd.length; i++) {
 		let targetElement = projectsToAdd[i];
 		targetElement.style.display = "flex";
 	}
 	const expandHTML = document
 		.getElementById("softwareProjects")
-		.getElementsByClassName("projects__expand");
+		.getElementsByClassName("expand");
 	let expandButton = expandHTML[0];
 	expandButton.style.display = "none";
 	const collapseHTML = document
 		.getElementById("softwareProjects")
-		.getElementsByClassName("projects__collapse");
+		.getElementsByClassName("collapse");
 	let collapseButton = collapseHTML[0];
 	collapseButton.style.display = "flex";
 }
 
 function collapseProjects() {
 	const projectsToRemove = document.getElementsByClassName(
-		"projects__project-grid__item--hidden"
+		"project-card--hidden"
 	);
 	for (let i = 0; i < projectsToRemove.length; i++) {
 		let targetElement = projectsToRemove[i];
@@ -30,12 +28,23 @@ function collapseProjects() {
 	}
 	const collapseHTML = document
 		.getElementById("softwareProjects")
-		.getElementsByClassName("projects__collapse");
+		.getElementsByClassName("collapse");
 	let collapseButton = collapseHTML[0];
 	collapseButton.style.display = "none";
 	const expandHTML = document
 		.getElementById("softwareProjects")
-		.getElementsByClassName("projects__expand");
+		.getElementsByClassName("expand");
 	let expandButton = expandHTML[0];
 	expandButton.style.display = "flex";
+}
+
+function displayModal(projectName) {
+	let targetHTML = document.getElementById(projectName);
+	targetHTML.style.display = "block";
+}
+
+function closeModal(projectName) {
+	let targetHTML = document.getElementById(projectName);
+	console.log(targetHTML);
+	targetHTML.style.display = "none";
 }
