@@ -281,7 +281,7 @@ main {
 		align-self: center;
 		margin: 2%;
 		@media only screen and (min-width: 1025px) {
-			width: 50%;
+			width: 40%;
 			margin: 4%;
 		}
 	}
@@ -368,8 +368,7 @@ main {
 		margin: 2% 0% 5%;
 		border: 5px solid $kilamanjaro;
 		border-radius: 50%;
-		filter: invert(0%) sepia(80%) saturate(30%) hue-rotate(297deg)
-			brightness(82%) contrast(100%);
+		filter: invert(0%) sepia(80%) saturate(30%) hue-rotate(297deg) brightness(82%) contrast(100%);
 		@media only screen and (min-width: 767px) {
 			width: 18%;
 			margin: 0% 5% 0% 0%;
