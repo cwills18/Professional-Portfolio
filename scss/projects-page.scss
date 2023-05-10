@@ -136,6 +136,13 @@ main {
 				font-size: 1.1em;
 			}
 		}
+		&--list {
+			margin-bottom: 2%;
+			font-size: 0.9em;
+			@media only screen and (min-width: 767px) {
+				font-size: 1.1em;
+			}
+		}
 		&--button-container {
 			width: 90%;
 			padding: 0px;
