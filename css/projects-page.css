@@ -222,8 +222,8 @@ main, .container, .project-card, .project-card__details, .expand,
   height: 100%;
 }
 .modal-images__content__img {
-  width: 60%;
-  height: auto;
+  height: 80%;
+  width: auto;
   margin: 30px;
 }
 
@@ -390,6 +390,15 @@ main {
 }
 @media only screen and (min-width: 767px) {
   .project-card__details--description {
+    font-size: 1.1em;
+  }
+}
+.project-card__details--list {
+  margin-bottom: 2%;
+  font-size: 0.9em;
+}
+@media only screen and (min-width: 767px) {
+  .project-card__details--list {
     font-size: 1.1em;
   }
 }
